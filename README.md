@@ -5,6 +5,9 @@
 
 # vscode
 vscode + cmake 
+ctrl+shift+p ->  Cmake Quick Start -> HelloWorld
+click button in bottom
+build -> debug / run
 
 # 建议
 SUGGESTION:
