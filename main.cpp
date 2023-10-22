@@ -28,14 +28,26 @@ int main(int, char**){
     ifstream jfile("1.json");
     jfile>>j;
     Solution s;
+    int caseIdx = 0;
     for(auto it:j){
         int target = it.at("target").get<int>();
         vector<int> nums = it.at("nums").get<vector<int>>();
+        vector<int> answer = it.at("answer").get<vector<int>>();
         vector<int> result = s.twoSum(nums, target);
-        cout << "nums:";
-        CoutVector(nums);
-        cout << "target:" << target << std::endl;
-        cout << "result:";
-        CoutVector(result);
+        bool eq = equal(answer.begin(), answer.end(), result.begin());
+        if(!eq)
+        {
+            cout<< "Failed case " << caseIdx << endl;
+            cout << "nums:";
+            CoutVector(nums);
+            cout << "target:" << target << std::endl;
+            cout << "result:";
+            CoutVector(result);
+            return 1;
+        }else{
+            cout << "Passed case "<<caseIdx<<endl;
+        }
+        caseIdx++;
     }
+    return 0;
 }
