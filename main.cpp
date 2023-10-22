@@ -25,7 +25,7 @@ vector<int> twoSum(vector<int> &numbers, int target) {
 
 int main(int, char**){
     json j;
-    ifstream jfile("1.json");
+    ifstream jfile("../LeetCodeTestData/Data/1.json");
     jfile>>j;
     Solution s;
     int caseIdx = 0;
